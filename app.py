@@ -6,7 +6,7 @@ app = Flask(__name__)
 # Define a route (homepage)
 @app.route('/')
 def home():
-    return "Hello, World! This is my first Flask app 🚀"
+    return "Implemented CICD Successfully🚀"
 
 # Run the app
 if __name__ == '__main__':
