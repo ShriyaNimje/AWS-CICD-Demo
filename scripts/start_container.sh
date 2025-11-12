@@ -3,13 +3,13 @@ set -e
 
 echo "Starting the new Flask container..."
 
-cd /home/ubuntu/app
+cd /home/ubuntu/app || exit 1
 
 # Pull the latest image from Docker Hub
 sudo docker pull shriya01/simple-python-flask-app:latest
 
 # Stop any existing container with same name
-if [ "$(sudo docker ps -q -f name=flask_app)" ]; then
+if [ "$(sudo docker ps -a -q -f name=flask_app)" ]; then
     echo "Stopping existing container..."
     sudo docker stop flask_app
     sudo docker rm flask_app
